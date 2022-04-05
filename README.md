@@ -8,5 +8,8 @@ MVC 패턴은 Model, View, Controller 이 3가지로 나뉘어 역할을 분할�
 나누어 처리하기 때문에 결함도가 낮아져 유지보수하기 편하다.   
 
 #### 순서는   
-*사용자의 요청을 Controller가 받고 Controller가 요청(URL)에 맞는 메소드를 호출   
+* 사용자의 요청을 Controller가 받고 Controller가 요청(URL)에 맞는 메소드를 호출 
+* Service와 함께 Buisness Logic을 처리
+* 최종적으로 나온 결과를 Model에 저장하고 View에 던져준다
+* View는 Controller에게 받은 데이터를 사용자에게 표시
 
