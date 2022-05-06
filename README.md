@@ -14,3 +14,9 @@ MVC 패턴은 Model, View, Controller 이 3가지로 나뉘어 역할을 분할�
 * View는 Controller에게 받은 데이터를 사용자에게 표시
 
 (여기서 *Buisness Logic*은 업무에 필요한 데이터 처리를 수행하는 응용프로그램의 일부 ex) 회원 정보 저장, 조회 등)
+
+
+###프로젝트 생성 후
+* web.xml의 파일 삭제 및 스프링 관련 파일 삭제
+* pom.xml의 수정 및 스프링 버전 변경
+* Java설정 관련 패키지 생성
