@@ -40,5 +40,8 @@ MVC 패턴은 Model, View, Controller 이 3가지로 나뉘어 역할을 분할�
 ## WAS의 종속적이지 않은 개발 환경
 
 #### pom.xml 에서 오류가 발생했을 때
-** m.2폴더에서 오류와 관련된 폴더를 삭제 후 이클립스 재 실행, 후에 maven - update project
+* m.2폴더에서 오류와 관련된 폴더를 삭제 후 이클립스 재 실행, 후에 maven - update project
+
+### 의존성
+
 
