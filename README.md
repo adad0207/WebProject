@@ -76,3 +76,44 @@ MVC 패턴은 Model, View, Controller 이 3가지로 나뉘어 역할을 분할�
 * tomcat의 기본포트가 8080이기 때문
 * ![image](https://user-images.githubusercontent.com/77110648/167246288-4ab54377-ebb9-4f46-abd6-36d7d00809c5.png)
 * sys계정으로 접속 후 해당 구문을 이용해서 포트번호 확인후 포트번호 변경
+#### JDBC연결
+* jdbc 드라이버 jar파일 라이브러리에 추가
+* jdbc 테스트 코드
+* ```package org.zerock.persistence;
+
+import static org.junit.Assert.fail;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import org.junit.Test;
+
+import lombok.extern.log4j.Log4j;
+
+@Log4j
+public class JDBCTest {
+
+	static {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Test
+	public void testConnection() {
+		try(Connection con =
+			DriverManager.getConnection(
+					"jdbc:oracle:thin:@localhost:1521:XE",
+					"book_ex",
+					"book_ex")){
+			log.info(con);
+			} catch (Exception e) {
+				fail(e.getMessage());
+			}
+		
+	}
+	
+}```
