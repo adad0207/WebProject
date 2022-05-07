@@ -79,7 +79,7 @@ MVC 패턴은 Model, View, Controller 이 3가지로 나뉘어 역할을 분할�
 #### JDBC연결
 * jdbc 드라이버 jar파일 라이브러리에 추가
 * jdbc 테스트 코드
-* ```package org.zerock.persistence;
+```package org.zerock.persistence;
 
 import static org.junit.Assert.fail;
 
@@ -116,4 +116,5 @@ public class JDBCTest {
 		
 	}
 	
-}```
+}
+```
