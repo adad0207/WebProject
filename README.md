@@ -43,5 +43,7 @@ MVC 패턴은 Model, View, Controller 이 3가지로 나뉘어 역할을 분할�
 * m.2폴더에서 오류와 관련된 폴더를 삭제 후 이클립스 재 실행, 후에 maven - update project
 
 ## 의존성
-
+### XML을 이용하는 의존성
+* STS의경우 기본적으로 XML을 이용해서 스프링에서 관리해야하는 객체들을 처리
+* root-context.xml은 빈을 설정하는 파일
 
