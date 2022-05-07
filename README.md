@@ -55,3 +55,9 @@ MVC 패턴은 Model, View, Controller 이 3가지로 나뉘어 역할을 분할�
 ![image](https://user-images.githubusercontent.com/77110648/167245763-55b74aa1-422b-4df3-a209-42436712e2af.png)
 
 * 설치 후 사용자 생성 및 권한 부여
+### JDBC연결 테스트 전 SQL Developer에서 연결이 가능한지 테스트 (SQL Developer는 내부적으로 JDBC를 이용하기 때문)
+#### 8080 포트변경
+* 오라클 11g의 경우 기본적으로 8080포트를 이용해서 웹환경으로도 데이터베이스에 접근 가능한데
+* tomcat의 기본포트가 8080이기 때문
+* ![image](https://user-images.githubusercontent.com/77110648/167246288-4ab54377-ebb9-4f46-abd6-36d7d00809c5.png)
+* sys계정으로 접속 후 해당 구문을 이용해서 포트번호 확인후 포트번호 변경
