@@ -47,3 +47,11 @@ MVC 패턴은 Model, View, Controller 이 3가지로 나뉘어 역할을 분할�
 * STS의경우 기본적으로 XML을 이용해서 스프링에서 관리해야하는 객체들을 처리
 * root-context.xml은 빈을 설정하는 파일
 
+
+
+
+
+## 오라클
+![image](https://user-images.githubusercontent.com/77110648/167245763-55b74aa1-422b-4df3-a209-42436712e2af.png)
+
+* 설치 후 사용자 생성 및 권한 부여
