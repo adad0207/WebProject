@@ -146,7 +146,7 @@ public class JDBCTest {
 	</bean> ```
 
 * DataSourceTexts 클래스 (junit) (빈에 등록된 datasource를 이용해서 connection을 제대로 처리하 수 있는 지 확인해보는 용도)
-* ```import static org.junit.Assert.fail;
+* ``` import static org.junit.Assert.fail;
 import java.sql.Connection;
 import javax.sql.DataSource;
 
@@ -176,6 +176,6 @@ public class DataSourceTests {
 		}
 	}
 
-}```
+} ```
 
 
