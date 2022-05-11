@@ -118,3 +118,64 @@ public class JDBCTest {
 	
 }
 ```
+### 커넥션 풀
+* 일정량의 Connection객체를 미리 만들어어서 pool에 저장해둔 뒤 프로그램에서 요청이 오면 Connection객체를 빌려주고, 해당 객체의 임무가 완료되었으면 다시 반납 받아서 pool에 저장을 하는 프로그래밍 기법
+* ![image](https://user-images.githubusercontent.com/77110648/167775043-ee7b7926-7d80-4fa7-9cc4-ef5af26eb82c.png)
+
+## HikariCP (커넥션 풀의 종류)
+* pom.xml에서
+* ``` <!--http://mavenpository.com/artifact/com.zaxxer/HilariCP -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>2.7.4</version>
+		</dependency> ```
+* rootcontext.xml 에서
+* ``` <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name ="driverClassName"
+		 value="oracle.jdbc.driver.OracleDriver"></property>
+		 <property name="jdbcUrl"
+		 value="jdbc:oracle:thin:@localhost:1521:XE"></property>
+		 <property name="username" value="book_ex"></property>
+		 <property name="password" value="book_ex"></property>	
+	</bean>
+	
+	<!-- HikariCP configuration -->
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+	<constructor-arg ref="hikariConfig"></constructor-arg>
+	</bean> ```
+
+* DataSourceTexts 클래스 (junit) (빈에 등록된 datasource를 이용해서 connection을 제대로 처리하 수 있는 지 확인해보는 용도)
+* ```import static org.junit.Assert.fail;
+import java.sql.Connection;
+import javax.sql.DataSource;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import lombok.Setter;
+import lombok.extern.log4j.Log4j;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
+@Log4j
+public class DataSourceTests {
+
+	@Setter(onMethod_ = { @Autowired })
+	private DataSource dataSource;
+
+	@Test
+	public void testConnection() {
+		try (Connection con = dataSource.getConnection()) {
+			log.info(con);
+		} catch (Exception e) {
+			fail(e.getMessage());
+		}
+	}
+
+}```
+
+
