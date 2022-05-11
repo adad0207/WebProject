@@ -147,37 +147,37 @@ public class JDBCTest {
 
 * DataSourceTexts 클래스 (junit) (빈에 등록된 datasource를 이용해서 connection을 제대로 처리하 수 있는 지 확인해보는 용도)
 * ``` 
-import static org.junit.Assert.fail;
-import java.sql.Connection;
-import javax.sql.DataSource;
+	import static org.junit.Assert.fail;
+	import java.sql.Connection;
+	import javax.sql.DataSource;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
+	import org.junit.Test;
+	import org.junit.runner.RunWith;
+	import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import lombok.Setter;
-import lombok.extern.log4j.Log4j;
+	import org.springframework.test.context.ContextConfiguration;
+	import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+	import lombok.Setter;
+	import lombok.extern.log4j.Log4j;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
-@Log4j
-public class DataSourceTests {
+	@RunWith(SpringJUnit4ClassRunner.class)
+	@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
+	@Log4j
+	public class DataSourceTests {
 
-	@Setter(onMethod_ = { @Autowired })
-	private DataSource dataSource;
+		@Setter(onMethod_ = { @Autowired })
+		private DataSource dataSource;
 
-	@Test
-	public void testConnection() {
-		try (Connection con = dataSource.getConnection()) {
-			log.info(con);
-		} catch (Exception e) {
-			fail(e.getMessage());
+		@Test
+		public void testConnection() {
+			try (Connection con = dataSource.getConnection()) {
+				log.info(con);
+			} catch (Exception e) {
+				fail(e.getMessage());
+			}
 		}
-	}
 
-}
+	}
 ```
 
 
