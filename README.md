@@ -238,33 +238,10 @@ public class TimeMapperTests {
 ```
 
 ## XML
-* Mybatis(Mapper 인터페이스) 를 이용해서 SQL을 처리할 때 어노테이션을 이용할 수 있지만 SQL이 복잡해지거나 길어질 경우
-어노테이션 보단 XML을 이용 (MyBatis-Spring의 경우 Mapper 인터페이스와 XML을 동시에 이용)
-XML 파일의 위치의 경우 Mapper 인터페이스가 있는 곳에 같이 작성하거나, XML파일을 만들 때 이름에 대한 규칙은 없지만,
-가능하다면 Mapper 인터페이스와 같은 이름을 이용하는 것이 가독성을 높여줌
-src/main/resources폴더에서 org/zerock/mapper/TimeMapper.xml 하나씩 생성
-Mapper 인터페이스와 XML을 같이 이용해 보기 위해 기존의 TimeMapper 인터페이스에 추가적인 메서드 선언
-**추가된 메서드
-XML 매퍼를 이용할 떄 신경써야하는 부분은 namespace 속성, 이 경우는 메서드 선언은 인터페이스에 존재하고
-SQL에 대한 처리는 XML을 이용
-<select> 태그의 id 속성의 값은 메서드의 이름과 동일하게 맞춰야 함. resultType은 선언된 메서드의 리턴타입과 동일하게 작성
-TimeMapperTests클래스를 이용해서 최종확인 테스트 작업
-**추가된 TimeMapperTests
+
 	
 ## log4jdbc-log4j2 
-Mybatis는 내부적으로 JDBC의 PraparedStatement를 이용해서 SQL을 처리하므로 SQL에 전달되는 파라미터는
-JDBC에서와 같이 '?'로 치환 되어 처리, SQL을 변환해서 PreparedStatement에 사용된 '?'가 어떤 값으로 처리 되었는지
-확인하는 기능을 추가하기 위해 log4jdbc-log4j2 라이브러리를 사용
-pom.xml에 라이브러리 설정
-**추가된 라이브러리
-1)로그 설정 파일을 추가하는작업, 2)JDBC의 연결정보 수정
-1) src/main/resources에 log4jdbc.log4j2.properties 파일 추가
-**파일의 내용 추가
-2) log4jdbc를 이용하는 경우는 JDBC 드라이버와 URL 정보를 수정해야 함
-root-context.xml의 일부를 수정
-**수정한 내용 추가
-변경되는 부분은 JDBC드라이버의 클래스를 'net.sf.log4jdbc.sql.jdbcapi.DriverSpy'로 수정하는작업
-JDBC 연결 URL부분에서 중간에 'log4jdbc' 문자열이 추가되는 부분.
+
 	
 	
 ### 본격적인 MVC
