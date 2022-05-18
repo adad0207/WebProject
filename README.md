@@ -260,6 +260,30 @@ public class TimeMapperTests {
 			<version>1.18.0</version>
 			<scope>provided</scope>
 		</dependency>```
-서블릿 버전이 2.5 버전을 사용하지만 Java 설정 등을 이용하려면 서블릿 3.0이상을 사용, 
-서블릿 버전을 3.1.0이상 버전으로 사용
-maven의 컴파일 옵션 1.8로 변경
+* 서블릿 버전이 2.5 버전을 사용하지만 Java 설정 등을 이용하려면 서블릿 3.0이상을 사용, 
+## 서블릿 버전을 3.1.0이상 버전으로 사용
+``` <!-- Servlet -->
+		<!-- <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		-->
+		<!-- 추가한 것 -->
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+```
+## maven의 컴파일 옵션 1.8로 변경
+```<!-- maven의 컴파일 옵션 1.8로 변경 -->
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+```
