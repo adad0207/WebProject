@@ -180,4 +180,62 @@ public class JDBCTest {
 	}
 ```
 
+## PreparedStatement 객체
+* statement를 상속받는 인터페이스로 "SQL구문을 실행시키는 기능을 갖는 객체"
+
+## mybatis 는 기존의 mysql을 그대로 활용할 수 있고 진입장벽이 낮다는 장점이 있어 jdbc 대안으로 많이 사용
+* mybatis-spring라이브러리로 쉽게 연동 가능
+
+## MyBatis와 관련된 라이브러리 추가
+* Mybatis와 mybatis-spring을 사용하기 위해서 pom.xml파일에 추가적인 라이브러리들을 설정해야 합니다.
+** 추가한것
+
+## SQLSessionFactory
+* SQLSession을 만들어내는 존재, SQLSession을 통해서 Connection을 생성하거나 원하는 SQL을전달하고, 결과를 리턴 받는다는 구조로 작성하게 됨
+root-context.xml에서 작성	SqlSessionFactoryBean을 이용
+** 추가한 것
+
+## Mapper
+* Mapper는 SQL과 그에 대한 처리를 지정하는 역할, MyBatis-Spring을 이용할 경우 Mapper를 XML과 인터페이스 + 어노테이션의 형태로 작성가능
+
+## Mapper 인터페이스
+* 인터페이스 mapper파일 추가
+* Namespaces에서 mybatis-spring 탭 선택
+* root-context.xml에 mybatis-spring태그 추가
+* org.zerock.persistence 패키치에 TimeMapper가 정상적으로 사용 가능한지 알아보기위한 테스트 코드 TimeMapperTests.java 작성
+* 정상적으로 작동할 시 TimeMapper 타입으로 만들어진 빈 이 존재한다는 뜻
+```import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.zerock.mapper.TimeMapper;
+
+import lombok.Setter;
+import lombok.extern.log4j.Log4j;
+
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
+@Log4j
+public class TimeMapperTests {
+	@Setter(onMethod_=@Autowired)
+	private TimeMapper timeMapper;
+	
+	@Test
+	public void testGetTime() {
+		log.info(timeMapper.getClass().getName());
+		log.info(timeMapper.getTIme());
+	}
+	//xml용 테스트
+	@Test
+	public void testGetTime2() {
+		
+		log.info("getTime2");
+		log.info(timeMapper.getTIme2());
+	}
+}
+```
+
+
 
