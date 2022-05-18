@@ -297,7 +297,13 @@ public class TimeMapperTests {
 * 관여하는 파일 : root-conxext.xml, servlet-conxext.xml (spring과 관련된 설정)
 * 프로젝트 구동은 web.xml 에서 시작
 * ![image](https://user-images.githubusercontent.com/77110648/168956993-c9983de3-93be-458d-ae6f-e955d0253df1.png)
-* web.xml에 가장먼저 Context Listener가 등록 돼 있음
+* web.xml의 ContextLoaderListener는 애당 웹 애플리케이션 구동 시 같이 동작,
+* root-context.xml이 처리 되면 파일에 있는 빈 설정들이 동작(정의된 객체(빈)들은 스프링 영역(context) 안에 생성, 객체들 간읜 의존성이 처리
+* root-context.xml 처리 후 스프링MVC에서 사용하는 DispatcherServlet이라는 서블릿과 관련된 설정이 동작
+* DispatcherServlet클래스는 MVC의 구조에서 가장 핵심적인 역할을 하는 클래스, 내부적으로 웹관련 처리의 준비작업을 진행하는데 이때 사용하는 파일이 servlet-context.xml
+* DispatcherServlet에서 XmlWebApplicationContext를 이용해서 servlet-context.xml을 로딩하고 해석하기 시작.
+* 이 과정에서 등록도니 객체(빈)들은 기존에 만들어진 빈들과 같이 연동
+* 
 * 
 
 
