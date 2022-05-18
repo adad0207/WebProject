@@ -177,8 +177,7 @@ public class JDBCTest {
 			}
 		}
 
-	}
-```
+	}```
 
 ## PreparedStatement 객체
 * statement를 상속받는 인터페이스로 "SQL구문을 실행시키는 기능을 갖는 객체"
@@ -205,8 +204,7 @@ root-context.xml에서 작성	SqlSessionFactoryBean을 이용
 * org.zerock.persistence 패키치에 TimeMapper가 정상적으로 사용 가능한지 알아보기위한 테스트 코드 TimeMapperTests.java 작성
 * 정상적으로 작동할 시 TimeMapper 타입으로 만들어진 빈 이 존재한다는 뜻
 
-```
-import org.junit.Test;
+```import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -236,8 +234,7 @@ public class TimeMapperTests {
 		log.info("getTime2");
 		log.info(timeMapper.getTIme2());
 	}
-}
-```
+}```
 
 
 
