@@ -303,7 +303,9 @@ public class TimeMapperTests {
 * DispatcherServlet클래스는 MVC의 구조에서 가장 핵심적인 역할을 하는 클래스, 내부적으로 웹관련 처리의 준비작업을 진행하는데 이때 사용하는 파일이 servlet-context.xml
 * DispatcherServlet에서 XmlWebApplicationContext를 이용해서 servlet-context.xml을 로딩하고 해석하기 시작.
 * 이 과정에서 등록도니 객체(빈)들은 기존에 만들어진 빈들과 같이 연동
+* 스프링MVC는 Servlet/JSP의 API를 사용할 필요성이 현저하게 줄어듬
 * 
-* 
+
+
 
 
