@@ -280,6 +280,7 @@ public class TimeMapperTests {
 ```
 ## maven의 컴파일 옵션 1.8로 변경
 ```<!-- maven의 컴파일 옵션 1.8로 변경 -->
+		<configuration>
                     <source>1.8</source>
                     <target>1.8</target>
                     <compilerArgument>-Xlint:all</compilerArgument>
