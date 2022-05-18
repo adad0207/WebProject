@@ -288,3 +288,16 @@ public class TimeMapperTests {
                     <showDeprecation>true</showDeprecation>
                 </configuration>
 ```
+
+## 절대 경로를 이용하는 구조가 바람직하므로 Tomcat에서 '/' 경로로 프로젝트가 실행 될 수 있도록
+![image](https://user-images.githubusercontent.com/77110648/168956372-cff808c7-aa92-4927-81e6-c30b83e570eb.png)
+
+## 프로젝트 구동
+* 관여하는 파일 : web.xml(Tomcat 구동과 관련된 설정)
+* 관여하는 파일 : root-conxext.xml, servlet-conxext.xml (spring과 관련된 설정)
+* 프로젝트 구동은 web.xml 에서 시작
+* ![image](https://user-images.githubusercontent.com/77110648/168956993-c9983de3-93be-458d-ae6f-e955d0253df1.png)
+* web.xml에 가장먼저 Context Listener가 등록 돼 있음
+* 
+
+
