@@ -267,4 +267,22 @@ root-context.xml의 일부를 수정
 JDBC 연결 URL부분에서 중간에 'log4jdbc' 문자열이 추가되는 부분.
 	
 	
-
+### 본격적인 MVC
+## 스프링을 5.0.7 버전으로 변경
+* ![image](https://user-images.githubusercontent.com/77110648/168940295-da57a747-b5e9-4889-9d8a-1d3dc3618c40.png)
+## Lombok 기능 추가를 위해 pom.xml에서 코드 작성
+* ``` <!-- Lombok 기능 추가 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>	
+			<version>${org.springframework-version}</version>	
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.0</version>
+			<scope>provided</scope>
+		</dependency>```
+서블릿 버전이 2.5 버전을 사용하지만 Java 설정 등을 이용하려면 서블릿 3.0이상을 사용, 
+서블릿 버전을 3.1.0이상 버전으로 사용
+maven의 컴파일 옵션 1.8로 변경
