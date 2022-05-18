@@ -307,9 +307,17 @@ public class TimeMapperTests {
 * 스프링MVC는 개발자가 Servlet/JSP의 API를 사용할 필요성이 현저하게 줄어듬
 * SpringMVC는 내부적으로 Sevlet/JSP를 처리하기 때문
 
-## 모델 2와 스프링 MVC
-
-
+## 모델 2
+![image](https://user-images.githubusercontent.com/77110648/168962543-4651c66d-4792-4cd5-8051-b9bd7f2a62fa.png)
+* 모델2 방식은 사용자의 request가 controller를 호출하게 되고 controller는 데이터를 처리하는 존재를 이용해 model을 처리
+* response할 때 필요한 데이터를 view로 전달
+## Spring MVC 구조
+* 그림
+* 사용자의 request는 DispatcherServlet을 통해서 처리
+![image](https://user-images.githubusercontent.com/77110648/168965434-3719eea4-fde5-462d-9dbc-03619369a5ff.png)
+* Handlermapping은 Request의 처리를 담당하는 컨트롤러를 찾기 위해 존재
+* HandlerMapping 인터페이스를 구현한 여러 객체들 중 RequestMappingHandlerMap-ping 같은 경우는 개발자가 @RequestMapping 어노테이션이 적용된 것을 기준으로 판단
+* 적절한 컨트롤러가 찾아졌다면 HandlerAdapter를 이용해서 해당 컨트롤러 동작
 
 
 
